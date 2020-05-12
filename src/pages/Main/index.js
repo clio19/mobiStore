@@ -36,6 +36,10 @@ export default function Main() {
     async function getProducts() {
       const response = await api.get('/products');
 
+      console.log('====================================');
+      console.log(response.data);
+      console.log('====================================');
+
       const data = response.data.map(product => ({
         ...product,
         priceFormatted: formatPrice(product.price),
